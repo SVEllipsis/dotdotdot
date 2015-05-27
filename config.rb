@@ -1,24 +1,30 @@
-# Require any additional compass plugins here.
-add_import_path "bower_components/foundation/scss"
+###
+# Compass
+###
+compass_config do |config|
+  config.output_style = :compact
+  config.add_import_path "bower_components/foundation/scss"
+  config.output_style = :compact
 
-# Set this to the root of your project when deployed:
-http_path = "/"
-css_dir = "stylesheets"
-sass_dir = "scss"
-images_dir = "images"
-javascripts_dir = "js"
+  after_configuration do
+    @bower_config = JSON.parse(IO.read("#{root}/.bowerrc"))
+    sprockets.append_path File.join "#{root}", @bower_config["directory"]
+  end
 
-# You can select your preferred output style here (can be overridden via the command line):
-# output_style = :expanded or :nested or :compact or :compressed
+end
 
-# To enable relative paths to assets via compass helper functions. Uncomment:
-# relative_assets = true
+activate :blog do |blog|
+  # blog.prefix = "blog"
+  blog.permalink = "{year}/{month}/{title}.html"
+  blog.sources = "blog/:year-:month-:day-:title.html"
+end
 
-# To disable debugging comments that display the original location of your selectors. Uncomment:
-# line_comments = false
+set :css_dir, 'stylesheets'
 
-# If you prefer the indented syntax, you might want to regenerate this
-# project again passing --syntax sass, or you can uncomment this:
-# preferred_syntax = :sass
-# and then run:
-# sass-convert -R --from scss --to sass sass scss && rm -rf sass && mv scss sass
+set :js_dir, 'javascripts'
+
+set :images_dir, 'images'
+
+# Build-specific configuration
+configure :build do
+end
