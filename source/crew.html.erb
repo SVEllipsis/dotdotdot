@@ -1,0 +1,25 @@
+---
+title: Crew Listing
+---
+<div class="crew-list row">
+  <div class="small-12 columns">
+    <div class="card">
+      <h1>The Crew</h1>
+
+      <%data.crew.each do |id, member| %>
+        <div id="<%=id%>" class="crew-member clearfix">
+
+          <h2><%=member.name%></h2>
+
+          <div class="right">
+            <img width=100" src="/images/<%=member.image %>" title="<%=member.name %>">
+
+          </div>
+
+          <%=member.bio%>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>

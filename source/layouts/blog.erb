@@ -1,46 +1,57 @@
-<div class="row masthead">
-  <img src="images/masthead.jpg">
-</div>
-<div class="row post">
-  <div class="small-12 columns">
-    <h3>Yes.... I am a boat!</h3>
-    <h6>Posted on July 19, 2013</h6>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-  </div>
-</div>
-<div class="row meta">
-  <div class="small-6 columns left card voyage">
-    <h6>The Voyage:</h6>
-    <dl>
-      <dt>Departure Port</dt>
-      <dd>Milbrook.</dd>
-      <dt>Destination Port</dt>
-      <dd>Mayflower.</dd>
-      <dt>Distance</dt>
-      <dd>2nm</dd>
-      <dt>Weather</dt>
-      <dd>West or northwest 4 or 5, Slight or moderate, Fair, Good
-      </dd>
-    </dl>
-  </div>
-  <div class="small-5 columns right card">
-    <h6>The Crew:</h6>
-    <div class="crew">
-      <img src="images/bpscott.jpeg">
-      <img src="images/noel.png">
-      <img src="images/kevinprince.jpeg">
-      <img src="images/billdingo.jpg">
+<% wrap_layout :layout do %>
+<div class="blogpost row">
+
+  <% if current_page.data.masthead %>
+    <div class="small-12 columns">
+      <div class="blogpost__masthead">
+        <img src="<%= current_page.data.masthead %>">
+      </div>
     </div>
-    <hr>
-    <dl>
-      <dt>Eat</dt>
-      <dd>The Devon and Cornwall.</dd>
-      <dt>Drank</dt>
-      <dd>Doombar.</dd>
-      <dt>Notes</dt>
-      <dd>Found a new curry house</dd>
-    </dl>
+  <% end %>
+
+  <div class="small-12 columns">
+    <div class="blogpost__content">
+      <h1><%= current_page.data.title %></h1>
+      <h6>Posted on <%= current_page.date.strftime('%B %d, %Y') %></h6>
+      <%= yield %>
+    </div>
+  </div>
+
+  <div class="medium-6 columns">
+    <div class="blogpost__voyage card">
+      <h6>The Voyage:</h6>
+      <dl>
+        <dt>Departure Port</dt>
+        <dd><%= current_page.data.voyage.departure %></dd>
+        <dt>Destination Port</dt>
+        <dd><%= current_page.data.voyage.destination %></dd>
+        <dt>Distance</dt>
+        <dd><%= current_page.data.voyage.distance %>nm</dd>
+        <dt>Weather</dt>
+        <dd><%= current_page.data.voyage.weather %></dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="medium-6 columns">
+    <div class="blogpost__crew card">
+      <h6>The Crew:</h6>
+
+      <% current_page.data.voyage.crew.each do |crew_id| %>
+        <% link_to('/crew.html#' + crew_id) do %>
+          <img class="blogpost__crew-img" src="/images/<%= data.crew[crew_id].image %>" title="<%= data.crew[crew_id].name %>">
+        <% end %>
+      <% end %>
+      <hr>
+      <dl>
+        <dt>Eat</dt>
+        <dd>The Devon and Cornwall.</dd>
+        <dt>Drank</dt>
+        <dd>Doombar.</dd>
+        <dt>Notes</dt>
+        <dd>Found a new curry house</dd>
+      </dl>
+    </div>
   </div>
 </div>
+<% end %>

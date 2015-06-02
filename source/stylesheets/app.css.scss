@@ -3,51 +3,11 @@
 @import "settings";
 @import "foundation";
 
-header {
-  margin: 2rem 0 0 0;
+@import "modules/page-header";
 
-  nav { margin-top: 1.5rem;}
-}
+@import "objects/blogpost";
+@import "objects/card";
 
-h1 > img {
-  width: 2.8rem;
-  height: 2.8rem;
-  margin: 0 1rem 0.5rem 0;
-}
-
-.masthead {
-  margin: 2em auto;
-  img { border-radius: 0.2em; }
-}
-
-.post {
-  background: #fff;
-  border-radius: 0.2rem;
-  box-shadow: 0px 1px 1px #aaa;
-  padding: 1.5rem 2rem;
-  margin: 2em auto;
-
-  h6 { color: #707070; font-size: 0.8em; }
-  p { color: #707070; }
-}
-
-.meta  {
-  .card {
-    background: #fff;
-    border-radius: 0.2rem;
-    box-shadow: 0px 1px 1px #aaa;
-    padding: 1.5rem 2rem;
-  }
-
-  .crew {
-     img {
-       width: 2.8rem;
-       height: 2.8rem;
-       margin: 0 1rem 0.5rem 0;
-       border-radius: 5rem;
-     }
-   }
-}
 
 // Or selectively include components
 // @import

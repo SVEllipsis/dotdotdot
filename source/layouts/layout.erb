@@ -7,31 +7,11 @@
     <%= stylesheet_link_tag "app" %>
     <%= javascript_include_tag  "app" %>
   </head>
+
   <body class="<%= page_classes %>">
-    <header>
-      <div class="row">
-        <div class="small-6 columns">
-          <h1><img src="images/logo.png"/>SV Ellipsis</h1>
-        </div>
-        <div class="small-6 columns">
-          <nav>
-            <ul class="inline-list right">
-              <li><a href="#">About</a></li>
-              <li><a href="#">Maps</a></li>
-              <li><a href="#">The Crew</a></li>
-              <li><a href="#">Enlistment</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
+    <%= partial "partials/page-header" %>
     <%= yield %>
-    <footer>
-      <div class="row text-center">
-        <hr>
-        <p>&copy; Copyright - Silex Marine Adventuring and Excursions</p>
-      </div>
-    </footer>
+    <%= partial "partials/page-footer" %>
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/foundation/js/foundation.min.js"></script>

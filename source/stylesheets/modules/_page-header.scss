@@ -1,0 +1,21 @@
+.page-header {
+  margin: 2rem 0;
+}
+
+.page-header__title {
+  @extend h1;
+}
+
+.page-header__title a {
+  color: inherit;
+}
+
+.page-header__nav {
+  margin-top: 1.5rem;
+}
+
+.page-header__logo {
+  width: 2.8rem;
+  height: 2.8rem;
+  margin: 0 1rem 0.5rem 0;
+}

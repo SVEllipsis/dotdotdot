@@ -1,0 +1,19 @@
+noelsharpe:
+  name: Noel Sharpe
+  image: noel.png
+  bio: Skipper
+
+billdingo:
+  name: Bill Dingo
+  image: billdingo.jpg
+  bio: Dingo
+
+kevinprince:
+  name: Kevin Prince
+  image: kevinprince.jpeg
+  bio: International Jetsetter
+
+bpscott:
+  name: Ben Scott
+  image: bpscott.jpeg
+  bio: Token Permie

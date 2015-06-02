@@ -1,0 +1,22 @@
+.blogpost__masthead {
+  margin-bottom: 2em;
+  img { border-radius: 0.2em; }
+}
+
+.blogpost__content {
+  background: #fff;
+  border-radius: 0.2rem;
+  box-shadow: 0px 1px 1px #aaa;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2em;
+
+  h6 { color: #707070; font-size: 0.8em; }
+  p { color: #707070; }
+}
+
+.blogpost__crew-img {
+   width: 2.8rem;
+   height: 2.8rem;
+   margin: 0 1rem 0.5rem 0;
+   border-radius: 5rem;
+ }
