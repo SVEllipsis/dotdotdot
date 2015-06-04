@@ -27,8 +27,6 @@ activate :deploy do |deploy|
   deploy.method = :git
 end
 
-# Ensure links work even if we're not at the base url
-set :relative_links, true
 
 set :css_dir, 'stylesheets'
 
@@ -39,4 +37,8 @@ set :images_dir, 'images'
 
 # Build-specific configuration
 configure :build do
+  # Ensure links work even if we're not at the base url
+  activate :relative_assets
+
+  set :relative_links, true
 end
