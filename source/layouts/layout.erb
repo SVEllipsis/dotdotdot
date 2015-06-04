@@ -12,7 +12,7 @@
     <%= yield %>
     <%= partial "partials/page-footer" %>
 
-    <script src="/js/vendor/jquery.min.js"></script>
+    <%= javascript_include_tag "vendor/jquery.min" %>
     <%=yield_content :footer_scripts%>
   </body>
 </html>
