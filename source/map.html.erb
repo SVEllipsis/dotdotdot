@@ -1,14 +1,36 @@
 ---
 title: Map
 gmaps_api_key: AIzaSyCutm8yU9R_oPItTgnNq1GtuP-3tX7h91M
+current_voyage: 1
+voyages:
+  - [ 2014, 1 ]
+  - [ 2015, 2 ]
 ---
 
 <div class="crew-list row">
   <div class="small-12 columns">
     <div class="card">
+
       <div class="card__flush-top">
         <div id="map-canvas" style="height: 600px; margin-bottom: 1.5rem;"></div>
       </div>
+
+      <h1>Map</h1>
+
+      Choose Voyage:
+
+      <form id="map-form" class="map__form" action="" method="get">
+        <div class="row collapse">
+        <div class="small-11 columns">
+          <%= select_tag :voyage, :options => current_page.data.voyages, :selected => current_page.data.current_voyage %>
+        </div>
+        <div class="small-1 columns">
+          <input type="submit" class="postfix button" value="Go!">
+        </div>
+      </div>
+
+
+      </form>
 
       <h4>About this data:</h4>
 
@@ -25,8 +47,20 @@ gmaps_api_key: AIzaSyCutm8yU9R_oPItTgnNq1GtuP-3tX7h91M
   <script src="https://maps.googleapis.com/maps/api/js?key=<%=current_page.data.gmaps_api_key%>&amp;sensor=false"></script>
   <%= javascript_include_tag "ellipsis-map" %>
   <script>
+  function getParameterByName(name) {
+      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+          results = regex.exec(location.search);
+      return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  }
+
+  window.initialVoyageId = getParameterByName('voyage') || <%=current_page.data.current_voyage%>;
+
+  /* Update Form field with current id */
+  document.getElementById('map-form').voyage.value = window.initialVoyageId;
+
   google.maps.event.addDomListener(window, 'load', function(){
-    window.map = new ellipsisMap(document.getElementById("map-canvas"));
+    window.map = new ellipsisMap(document.getElementById("map-canvas"), window.initialVoyageId);
   });
   </script>
 <% end %>
