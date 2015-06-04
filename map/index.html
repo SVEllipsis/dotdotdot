@@ -1,0 +1,67 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map</title>
+    <link href="/stylesheets/app.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body class="map map_index">
+    <header class="page-header">
+  <div class="row">
+    <div class="small-6 columns">
+<a class="page-header__title" href="/">        <img class="page-header__logo" src="/images/logo.png" />
+        SV Ellipsis
+</a>    </div>
+    <div class="small-6 columns">
+      <nav class="page-header__nav">
+        <ul class="inline-list right">
+          <li><a href="#">About</a></li>
+          <li><a href="./">Map</a></li>
+          <li><a href="../crew/">The Crew</a></li>
+          <li><a href="#">Enlistment</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+    <div class="crew-list row">
+  <div class="small-12 columns">
+    <div class="card">
+      <div class="card__flush-top">
+        <div id="map-canvas" style="height: 600px; margin-bottom: 1.5rem;"></div>
+      </div>
+
+      <h4>About this data:</h4>
+
+      <p>Data is transmited from SV Ellipsis approx every 3 hours via
+        Iridium. Occasionally some data maybe missing or delayed.</p>
+
+      <p>You can follow us <a href="http://twitter.com/svellipsis">@svellipsis</a> for
+        updates as we get them.</p>
+    </div>
+  </div>
+</div>
+
+
+    <footer>
+  <div class="row text-center">
+    <hr>
+    <p>&copy; Copyright - Silex Marine Adventuring and Excursions</p>
+  </div>
+</footer>
+
+
+    <script src="/js/vendor/jquery.min.js" type="text/javascript"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCutm8yU9R_oPItTgnNq1GtuP-3tX7h91M&amp;sensor=false"></script>
+  <script src="/js/ellipsis-map.js" type="text/javascript"></script>
+  <script>
+  google.maps.event.addDomListener(window, 'load', function(){
+    window.map = new ellipsisMap(document.getElementById("map-canvas"));
+  });
+  </script>
+
+  </body>
+</html>
