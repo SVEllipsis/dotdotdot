@@ -12,8 +12,7 @@ title: Crew Listing
           <h2><%=member.name%></h2>
 
           <div class="right">
-            <img width=100" src="/images/<%=member.image %>" title="<%=member.name %>">
-
+            <%= image_tag member.image, :width => 100, :title => member.name %>
           </div>
 
           <%=member.bio%>

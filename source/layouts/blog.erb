@@ -39,7 +39,7 @@
 
       <% current_page.data.voyage.crew.each do |crew_id| %>
         <% link_to('/crew.html#' + crew_id) do %>
-          <img class="blogpost__crew-img" src="/images/<%= data.crew[crew_id].image %>" title="<%= data.crew[crew_id].name %>">
+        <%= image_tag data.crew[crew_id].image, :class => "blogpost__crew-img", :title => data.crew[crew_id].name %>
         <% end %>
       <% end %>
       <hr>
