@@ -23,6 +23,7 @@ activate :blog do |blog|
 end
 
 activate :deploy do |deploy|
+  deploy.build_before = true
   deploy.method = :git
 end
 

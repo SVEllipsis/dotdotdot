@@ -1,29 +1,30 @@
-# Foundation Compass Template
+DotDotDot
+===========
 
-The easiest way to get started with Foundation + Compass.
+A new site for SV Ellipsis and her voyages
 
-## Requirements
+Development
+-----------
 
-  * Ruby 1.9+
-  * [Node.js](http://nodejs.org)
-  * [compass](http://compass-style.org/): `gem install compass`
-  * [bower](http://bower.io): `npm install bower -g`
+Install dependencies:
 
-## Quickstart
-
-  * [Download this starter compass project and unzip it](https://github.com/zurb/foundation-compass-template/archive/master.zip)
-  * Run `bower install` to install the latest version of Foundation
-  
-Then when you're working on your project, just run the following command:
-
-```bash
-bundle exec compass watch
+```
+bundle install
+bower install
 ```
 
-## Upgrading
+Run the Middleman server:
 
-If you'd like to upgrade to a newer version of Foundation down the road just run:
+```
+bundle exec middleman
+```
 
-```bash
-bower update
+Deploying
+---------
+
+Pages are pushed to GitHub pages, using the middleman-deploy gem. Configuration
+is set so that there is a clean build before each deploy.
+
+```
+bundle exec middleman deploy
 ```
