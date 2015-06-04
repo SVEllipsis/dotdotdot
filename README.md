@@ -10,7 +10,6 @@ Install dependencies:
 
 ```
 bundle install
-bower install
 ```
 
 Run the Middleman server:

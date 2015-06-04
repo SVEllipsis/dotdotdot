@@ -3,13 +3,7 @@
 ###
 compass_config do |config|
   config.output_style = :compact
-  config.add_import_path "bower_components/foundation/scss"
-  config.output_style = :compact
-
-  after_configuration do
-    @bower_config = JSON.parse(IO.read("#{root}/.bowerrc"))
-    sprockets.append_path File.join "#{root}", @bower_config["directory"]
-  end
+  config.add_import_path "stylesheets/vendor"
 
 end
 

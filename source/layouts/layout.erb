@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= current_page.data.title || "..." %></title>
     <%= stylesheet_link_tag "app" %>
-    <%= javascript_include_tag  "app" %>
   </head>
 
   <body class="<%= page_classes %>">
@@ -13,8 +12,7 @@
     <%= yield %>
     <%= partial "partials/page-footer" %>
 
-    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="/bower_components/foundation/js/foundation.min.js"></script>
-    <script src="/js/app.js"></script>
+    <script src="/js/vendor/jquery.min.js"></script>
+    <%=yield_content :footer_scripts%>
   </body>
 </html>
