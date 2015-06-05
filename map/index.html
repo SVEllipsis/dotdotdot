@@ -19,10 +19,10 @@
     <div class="small-6 columns">
       <nav class="page-header__nav">
         <ul class="inline-list right">
-          <li><a href="#">About</a></li>
+          <!-- <li><a href="#">About</a></li> -->
           <li><a href="./">Map</a></li>
           <li><a href="../crew/">The Crew</a></li>
-          <li><a href="#">Enlistment</a></li>
+          <!-- <li><a href="#">Enlistment</a></li> -->
         </ul>
       </nav>
     </div>
@@ -44,8 +44,8 @@
       <form id="map-form" class="map__form" action="" method="get">
         <div class="row collapse">
         <div class="small-11 columns">
-          <select name="voyage"><option value="1" selected="selected">2014</option>
-<option value="2">2015</option>
+          <select name="voyage"><option value="1">2014</option>
+<option value="2" selected="selected">2015</option>
 </select>
         </div>
         <div class="small-1 columns">
@@ -58,7 +58,7 @@
 
       <h4>About this data:</h4>
 
-      <p>Data is transmited from SV Ellipsis approx every 3 hours via
+      <p>Data is transmited from SV Ellipsis approx every hour via
         Iridium. Occasionally some data maybe missing or delayed.</p>
 
       <p>You can follow us <a href="http://twitter.com/svellipsis">@svellipsis</a> for
@@ -87,7 +87,7 @@
       return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
   }
 
-  window.initialVoyageId = getParameterByName('voyage') || 1;
+  window.initialVoyageId = getParameterByName('voyage') || 2;
 
   /* Update Form field with current id */
   document.getElementById('map-form').voyage.value = window.initialVoyageId;
