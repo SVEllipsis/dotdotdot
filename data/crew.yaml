@@ -1,6 +1,6 @@
 noelsharpe:
   name: Noel Sharpe
-  image: crew/noel.png
+  image: crew/noel.jpg
   bio: Skipper
 
 billdingo:
@@ -10,10 +10,16 @@ billdingo:
 
 kevinprince:
   name: Kevin Prince
-  image: crew/kevinprince.jpeg
+  image: crew/kevinprince.jpg
   bio: International Jetsetter
+
+dimip:
+  name: Dimi
+  image: crew/dimip.jpg
+  bio: Greek
+
 
 bpscott:
   name: Ben Scott
-  image: crew/bpscott.jpeg
+  image: crew/bpscott.jpg
   bio: Token Permie

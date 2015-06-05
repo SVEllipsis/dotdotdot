@@ -9,6 +9,7 @@ voyage:
   distance: 10
   weather: xx
   crew: [noelsharpe, billdingo, kevinprince, bpscott]
+published: false # Don't publish me when building
 ---
 
 Bacon ipsum dolor amet kevin t-bone venison capicola. Beef short ribs short loin, ham chicken t-bone landjaeger flank turducken. Tongue cow beef ribs alcatra beef. Beef ribs chuck ribeye short loin. Prosciutto venison sirloin meatball, porchetta turducken chicken chuck.
