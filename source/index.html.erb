@@ -2,26 +2,49 @@
 pageable: true
 per_page: 10
 ---
-<% if paginate && num_pages > 1 %>
-  <p>Page <%= page_number %> of <%= num_pages %></p>
 
-  <% if prev_page %>
-    <p><%= link_to 'Previous page', prev_page %></p>
-  <% end %>
-<% end %>
+<div class="row post">
+  <div class="small-12 columns">
+    <div class="card">
+      <p>Hello! I'm a boat! I like sailing! My <%=link_to "crew", "/crew.html"%>
+         like finding delicious food and drink but they tend to leave me behind
+         as I can't really fit into restaurants (or their outside space).</p>
 
-<% page_articles.each_with_index do |article, i| %>
-  <div class="row post">
-    <div class="small-12 columns">
+      <p>In 2014 I went to Brittany and I liked France so much I've decided to
+         back again in 2015. This time I've told the crew to document it as
+         they go instead of promising to write it up afterwards then never
+         getting around to it. Let's see how well they do.</p>
+
+      <p>You can find out our latest position by looking at our
+         <%=link_to "map", "/map.html"%>, which updates automatically (provided
+         we remember to turn the tracker on) because telling people where you
+         are is useful for both safety reasons and bragging.</p>
+    </div>
+  </div>
+</div>
+
+<div class="row post">
+  <div class="small-12 columns">
+    <% page_articles.each_with_index do |article, i| %>
+    <div class="card">
       <h3><%= link_to article.title, article %></h3>
       <h6>Posted on <%= article.date.strftime('%b %e') %></h6>
       <%= article.summary(250) %>
     </div>
+    <% end %>
   </div>
-<% end %>
+</div>
 
 <% if paginate %>
   <% if next_page %>
     <p><%= link_to 'Next page', next_page %></p>
+  <% end %>
+
+  <% if num_pages > 1 %>
+    <p>Page <%= page_number %> of <%= num_pages %></p>
+  <% end %>
+
+  <% if prev_page %>
+    <p><%= link_to 'Previous page', prev_page %></p>
   <% end %>
 <% end %>
