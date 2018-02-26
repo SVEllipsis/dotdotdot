@@ -1,6 +1,6 @@
 ---
 title: Map
-gmaps_api_key: AIzaSyCutm8yU9R_oPItTgnNq1GtuP-3tX7h91M
+gmaps_api_key: AIzaSyBluOcHbET3xs4QBRfzGtA5pC9rS6my5V8
 current_voyage: 2
 voyages:
   - [ 2014, 1 ]
@@ -44,7 +44,7 @@ voyages:
 </div>
 
 <% content_for :footer_scripts do %>
-  <script src="https://maps.googleapis.com/maps/api/js?key=<%=current_page.data.gmaps_api_key%>&amp;sensor=false"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=<%=current_page.data.gmaps_api_key%>"></script>
   <%= javascript_include_tag "ellipsis-map" %>
   <script>
   function getParameterByName(name) {
